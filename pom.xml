@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <!-- The Basics -->
+  <name>Trabalho de DM 110 parent</name>
+  <description>DM 110 JEE agregator</description>
+
+  <groupId>br.inatel.dm110</groupId>
+  <artifactId>trabalho-parent</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <modules>
+    <module>trabalho-ear</module>
+    <module>trabalho-ejb</module>
+    <module>trabalho-ejb-client</module>
+    <module>trabalho-web</module>
+    <module>trabalho-api</module>
+    <module>trabalho-impl</module>
+  </modules>
+
+  <build>
+	<plugins>
+	  <plugin>
+		    <artifactId>maven-compiler-plugin</artifactId>
+		    <version>3.2</version>
+		    <configuration>
+		        <source>1.8</source>
+		        <target>1.8</target>
+		    </configuration>
+		</plugin>
+	</plugins>
+  </build>
+
+  <dependencyManagement>
+    <dependencies>
+		<dependency>
+			  <groupId>br.inatel.dm110</groupId>
+			  <artifactId>trabalho-web</artifactId>
+			  <version>1.0</version>
+			  <type>war</type>
+		</dependency>
+		<dependency>
+			  <groupId>br.inatel.dm110</groupId>
+			  <artifactId>trabalho-ejb</artifactId>
+			  <version>1.0</version>
+			  <type>ejb</type>
+		</dependency>
+		<dependency>
+			  <groupId>br.inatel.dm110</groupId>
+			  <artifactId>trabalho-ejb-client</artifactId>
+			  <version>1.0</version>
+			  <type>jar</type>
+		</dependency>
+		<dependency>
+			  <groupId>br.inatel.dm110</groupId>
+			  <artifactId>trabalho-api</artifactId>
+			  <version>1.0</version>
+			  <type>jar</type>
+		</dependency>
+		<dependency>
+			  <groupId>br.inatel.dm110</groupId>
+			  <artifactId>trabalho-impl</artifactId>
+			  <version>1.0</version>
+			  <type>jar</type>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax/javaee-api -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+    </dependencies>
+  </dependencyManagement>
+
+</project>
+

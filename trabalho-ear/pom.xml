@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <name>Trabalho de DM 110 - EAR</name>
+  <description>Main JEE project of DM 110</description>
+  <properties></properties>
+  <parent>
+    <groupId>br.inatel.dm110</groupId>
+    <artifactId>trabalho-parent</artifactId>
+    <version>1.0</version>
+  </parent>
+
+  <!-- The Basics -->
+  <groupId>br.inatel.dm110</groupId>
+  <artifactId>trabalho-ear</artifactId>
+  <packaging>ear</packaging>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ear-plugin</artifactId>
+        <version>2.8</version>
+        <configuration>
+			<defaultLibBundleDir>lib</defaultLibBundleDir>
+           <modules>
+             <jarModule>
+			  <groupId>br.inatel.dm110</groupId>
+			  <artifactId>trabalho-api</artifactId>
+             </jarModule>
+             <jarModule>
+			  <groupId>br.inatel.dm110</groupId>
+			  <artifactId>trabalho-impl</artifactId>
+             </jarModule>
+             <jarModule>
+			  <groupId>br.inatel.dm110</groupId>
+			  <artifactId>trabalho-ejb-client</artifactId>
+             </jarModule>
+          </modules>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+	<dependency>
+		  <groupId>br.inatel.dm110</groupId>
+		  <artifactId>trabalho-web</artifactId>
+		  <type>war</type>
+	</dependency>
+	<dependency>
+		  <groupId>br.inatel.dm110</groupId>
+		  <artifactId>trabalho-ejb</artifactId>
+		  <type>ejb</type>
+	</dependency>
+
+		<dependency>
+			  <groupId>br.inatel.dm110</groupId>
+			  <artifactId>trabalho-ejb-client</artifactId>
+			  <scope>provided</scope>
+			  <type>jar</type>
+		</dependency>
+		<dependency>
+			  <groupId>br.inatel.dm110</groupId>
+			  <artifactId>trabalho-api</artifactId>
+			  <scope>provided</scope>
+			  <type>jar</type>
+		</dependency>
+		<dependency>
+			  <groupId>br.inatel.dm110</groupId>
+			  <artifactId>trabalho-impl</artifactId>
+			  <scope>provided</scope>
+			  <type>jar</type>
+		</dependency>
+
+  </dependencies>
+</project>
