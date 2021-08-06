@@ -13,13 +13,11 @@
     <version>1.0</version>
   </parent>
 
-  <!-- The Basics -->
   <groupId>br.inatel.dm110</groupId>
   <artifactId>trabalho-api</artifactId>
   <packaging>jar</packaging>
 
   <dependencies>
-	<!-- https://mvnrepository.com/artifact/javax/javaee-api -->
 	<dependency>
 		<groupId>javax</groupId>
 		<artifactId>javaee-api</artifactId>

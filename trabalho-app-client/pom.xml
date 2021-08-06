@@ -4,8 +4,8 @@
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
  
-  <name>Trabalho de DM 110 - EJB Client</name>
-  <description>EJB Client project of DM 110</description>
+  <name>Trabalho de DM 110 - App Client</name>
+  <description>App Client project of DM 110</description>
   <properties></properties>
   <parent>
     <groupId>br.inatel.dm110</groupId>
@@ -13,7 +13,6 @@
     <version>1.0</version>
   </parent>
 
-  <!-- The Basics -->
   <groupId>br.inatel.dm110</groupId>
   <artifactId>trabalho-ejb-client</artifactId>
   <packaging>jar</packaging>
@@ -22,6 +21,23 @@
 		  <groupId>br.inatel.dm110</groupId>
 		  <artifactId>trabalho-api</artifactId>
 		  <type>jar</type>
+	</dependency>
+	<dependency>
+		  <groupId>org.wildfly</groupId>
+		  <artifactId>wildfly-ejb-client-bom</artifactId>
+		  <type>pom</type>
+	</dependency>
+	<dependency>
+		  <groupId>org.glassfish.jersey.media</groupId>
+		  <artifactId>jersey-media-json-jackson</artifactId>
+	</dependency>
+	<dependency>
+		  <groupId>org.glassfish.jersey.core</groupId>
+		  <artifactId>jersey-client</artifactId>
+	</dependency>
+	<dependency>
+		  <groupId>javax</groupId>
+		  <artifactId>javaee-api</artifactId>
 	</dependency>
   </dependencies>
 </project>
