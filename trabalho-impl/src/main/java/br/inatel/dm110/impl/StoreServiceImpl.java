@@ -4,13 +4,12 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import javax.ejb.EJB;
-import javax.ws.rs.core.Response;
-
-import br.inatel.dm110.api.MessageTO;
+import javax.enterprise.context.RequestScoped;
+import br.inatel.dm110.api.ProductTO;
 import br.inatel.dm110.api.StoreService;
-import br.inatel.dm110.entities.Product;
 import br.inatel.dm110.interfaces.StoreLocal;
 
+@RequestScoped
 public class StoreServiceImpl implements StoreService{
 
 	private static Logger log = Logger.getLogger(StoreServiceImpl.class.getName());
@@ -19,73 +18,50 @@ public class StoreServiceImpl implements StoreService{
 	private StoreLocal storeBean;
 	
 	
-	
 	@Override
-	public List<String> getAllProductCodes() {
-		
-		return null;
+	public void storeNewProduct(ProductTO product) {
+		storeBean.storeNewProduct(product);	
 	}
 	
-	@SuppressWarnings("unchecked")
+	
 	@Override
-	public Product getProduct(String productCode) {
-		log.info("Product is: ");	
-		return null;
+	public List<ProductTO> getAllProductCodes() {
+		return storeBean.getAllProductCodes();
+	}
+	
+	
+	@Override
+	public ProductTO getProduct(String productCode) {
+			
+		return storeBean.getProduct(productCode);
 	}
 
 	@Override
-	public int getAllProductStored(String productCode) {
+	public int getProductAmount(String productCode) {
 		
-		return 0;
+		return storeBean.getProductAmount(productCode);
 	}
-	
-	
-	@SuppressWarnings("hiding")
-	@Override
-	public <Product> Product createNewProduct(Product product) {
 		
-		return null;
-	}
 
 	@Override
 	public int getMinimumAmount(String productCode) {
 		
-		return 0;
+		return storeBean.getMinimumAmount(productCode);
 	}
 
 	@Override
 	public String getLocal(String productCode) {
 		
-		return null;
+		return storeBean.getLocal(productCode);
 	}
 
 	@Override
 	public int getAge(String productCode) {
 		
-		return 0;
+		return storeBean.getAge(productCode);
 	}
-
-
-	@Override
-	public Response getMessage(Integer id) {
-		
-		return null;
-	}
-
-	@Override
-	public Response storeNewMessage(MessageTO message) {
-		
-		return null;
-	}
-
-	@Override
-	public Response getAllMessages() {
-		
-		return null;
-	}
-
-
-
+	
+	
 	
 
 }
