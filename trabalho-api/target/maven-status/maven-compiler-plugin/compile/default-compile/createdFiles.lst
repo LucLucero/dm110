@@ -1,0 +1,5 @@
+br\inatel\dm110\interfaces\StoreRemote.class
+br\inatel\dm110\api\ProductTO.class
+br\inatel\dm110\interfaces\Store.class
+br\inatel\dm110\api\StoreService.class
+br\inatel\dm110\interfaces\StoreLocal.class

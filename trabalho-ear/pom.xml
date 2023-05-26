@@ -40,7 +40,7 @@
     </plugins>
   </build>
 
-  <dependencies>
+  <dependencies> 	
 	<dependency>
 		  <groupId>br.inatel.dm110</groupId>
 		  <artifactId>trabalho-web</artifactId>

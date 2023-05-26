@@ -17,12 +17,14 @@
   </properties>
 
   <modules>
+  
     <module>trabalho-ear</module>
     <module>trabalho-ejb</module>
     <module>trabalho-app-client</module>
     <module>trabalho-web</module>
     <module>trabalho-api</module>
     <module>trabalho-impl</module>
+	
   </modules>
 
   <build>
@@ -49,6 +51,12 @@
 		<dependency>
 			  <groupId>br.inatel.dm110</groupId>
 			  <artifactId>trabalho-ejb</artifactId>
+			  <version>1.0</version>
+			  <type>ejb</type>
+		</dependency>
+		<dependency>
+			  <groupId>br.inatel.dm110</groupId>
+			  <artifactId>trabalho-mdb</artifactId>
 			  <version>1.0</version>
 			  <type>ejb</type>
 		</dependency>
